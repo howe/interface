@@ -3,60 +3,69 @@ package cn.esup.bean;
 import org.nutz.dao.entity.annotation.*;
 
 /**
-* 
+* 虚拟卡信息表
 */
 @Table("es_virtual_card")
 @PK({"cardId"})
 public class VirtualCard {
 
 	/**
-	 * 
+	 * 虚拟卡卡号自增id
 	 */
 	@Id
 	@Column("card_id")
 	private Integer cardId;
+	
 	/**
-	 * 
+	 * 该虚拟卡对应的商品id，取值于表es_goods
 	 */
 	@Column("goods_id")
 	private Integer goodsId;
+	
 	/**
-	 * 
+	 * 加密后的卡号
 	 */
 	@Column("card_sn")
 	private String cardSn;
+	
 	/**
-	 * 
+	 * 加密后的密码
 	 */
 	@Column("card_password")
 	private String cardPassword;
+	
 	/**
 	 * 充值链接
 	 */
 	@Column("card_url")
 	private String cardUrl;
+	
 	/**
-	 * 
+	 * 虚拟卡添加日期
 	 */
 	@Column("add_date")
 	private Integer addDate;
+	
 	/**
-	 * 
+	 * 虚拟卡截至使用日期
 	 */
 	@Column("end_date")
 	private Integer endDate;
+	
 	/**
-	 * 
+	 * 是否卖出，0，否；1，是
 	 */
 	@Column("is_saled")
 	private Boolean isSaled;
+	
 	/**
-	 * 
+	 * 卖出该卡号的交易号，取值表es_order_info
 	 */
 	@Column("order_sn")
 	private String orderSn;
+	
 	/**
-	 * 
+	 * crc32后的key
 	 */
 	@Column("crc32")
 	private String crc32;
