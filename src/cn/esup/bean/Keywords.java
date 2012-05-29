@@ -2,19 +2,11 @@ package cn.esup.bean;
 
 import org.nutz.dao.entity.annotation.*;
 
-import lombok.Data;
-
 /**
 * 
 */
-@Data
 @Table("es_keywords")
-@Pk({
-"date" ,
-"searchengine" ,
-"keyword" ,
-"count" 
-})
+@PK({"date", "searchengine", "keyword"})
 public class Keywords {
 
 	/**
@@ -37,4 +29,30 @@ public class Keywords {
 	 */
 	@Column("count")
 	private Integer count;
+	
+	public java.util.Date getDate() {
+		return date;
+	}
+	public void setDate(java.util.Date date) {
+		this.date = date;
+	}
+	public String getSearchengine() {
+		return searchengine;
+	}
+	public void setSearchengine(String searchengine) {
+		this.searchengine = searchengine;
+	}
+	public String getKeyword() {
+		return keyword;
+	}
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+	public Integer getCount() {
+		return count;
+	}
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+	
 }

@@ -2,20 +2,11 @@ package cn.esup.bean;
 
 import org.nutz.dao.entity.annotation.*;
 
-import lombok.Data;
-
 /**
 * 
 */
-@Data
 @Table("es_package_goods")
-@Pk({
-"packageId" ,
-"goodsId" ,
-"productId" ,
-"goodsNumber" ,
-"adminId" 
-})
+@PK({"packageId", "goodsId", "productId", "adminId"})
 public class PackageGoods {
 
 	/**
@@ -43,4 +34,36 @@ public class PackageGoods {
 	 */
 	@Column("admin_id")
 	private Integer adminId;
+	
+	public Integer getPackageId() {
+		return packageId;
+	}
+	public void setPackageId(Integer packageId) {
+		this.packageId = packageId;
+	}
+	public Integer getGoodsId() {
+		return goodsId;
+	}
+	public void setGoodsId(Integer goodsId) {
+		this.goodsId = goodsId;
+	}
+	public Integer getProductId() {
+		return productId;
+	}
+	public void setProductId(Integer productId) {
+		this.productId = productId;
+	}
+	public Integer getGoodsNumber() {
+		return goodsNumber;
+	}
+	public void setGoodsNumber(Integer goodsNumber) {
+		this.goodsNumber = goodsNumber;
+	}
+	public Integer getAdminId() {
+		return adminId;
+	}
+	public void setAdminId(Integer adminId) {
+		this.adminId = adminId;
+	}
+	
 }

@@ -2,12 +2,9 @@ package cn.esup.bean;
 
 import org.nutz.dao.entity.annotation.*;
 
-import lombok.Data;
-
 /**
 * 
 */
-@Data
 @Table("es_region")
 public class Region {
 
@@ -36,4 +33,36 @@ public class Region {
 	 */
 	@Column("agency_id")
 	private Integer agencyId;
+	
+	public Integer getRegionId() {
+		return regionId;
+	}
+	public void setRegionId(Integer regionId) {
+		this.regionId = regionId;
+	}
+	public Integer getParentId() {
+		return parentId;
+	}
+	public void setParentId(Integer parentId) {
+		this.parentId = parentId;
+	}
+	public String getRegionName() {
+		return regionName;
+	}
+	public void setRegionName(String regionName) {
+		this.regionName = regionName;
+	}
+	public Boolean getRegionType() {
+		return regionType;
+	}
+	public void setRegionType(Boolean regionType) {
+		this.regionType = regionType;
+	}
+	public Integer getAgencyId() {
+		return agencyId;
+	}
+	public void setAgencyId(Integer agencyId) {
+		this.agencyId = agencyId;
+	}
+	
 }

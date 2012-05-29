@@ -2,17 +2,11 @@ package cn.esup.bean;
 
 import org.nutz.dao.entity.annotation.*;
 
-import lombok.Data;
-
 /**
 * 
 */
-@Data
 @Table("es_goods_cat")
-@Pk({
-"goodsId" ,
-"catId" 
-})
+@PK({"goodsId", "catId"})
 public class GoodsCat {
 
 	/**
@@ -25,4 +19,18 @@ public class GoodsCat {
 	 */
 	@Column("cat_id")
 	private Integer catId;
+	
+	public Integer getGoodsId() {
+		return goodsId;
+	}
+	public void setGoodsId(Integer goodsId) {
+		this.goodsId = goodsId;
+	}
+	public Integer getCatId() {
+		return catId;
+	}
+	public void setCatId(Integer catId) {
+		this.catId = catId;
+	}
+	
 }

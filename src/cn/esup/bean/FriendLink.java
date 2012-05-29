@@ -2,13 +2,11 @@ package cn.esup.bean;
 
 import org.nutz.dao.entity.annotation.*;
 
-import lombok.Data;
-
 /**
 * 
 */
-@Data
 @Table("es_friend_link")
+@PK({"linkId"})
 public class FriendLink {
 
 	/**
@@ -36,4 +34,36 @@ public class FriendLink {
 	 */
 	@Column("show_order")
 	private Integer showOrder;
+	
+	public Integer getLinkId() {
+		return linkId;
+	}
+	public void setLinkId(Integer linkId) {
+		this.linkId = linkId;
+	}
+	public String getLinkName() {
+		return linkName;
+	}
+	public void setLinkName(String linkName) {
+		this.linkName = linkName;
+	}
+	public String getLinkUrl() {
+		return linkUrl;
+	}
+	public void setLinkUrl(String linkUrl) {
+		this.linkUrl = linkUrl;
+	}
+	public String getLinkLogo() {
+		return linkLogo;
+	}
+	public void setLinkLogo(String linkLogo) {
+		this.linkLogo = linkLogo;
+	}
+	public Integer getShowOrder() {
+		return showOrder;
+	}
+	public void setShowOrder(Integer showOrder) {
+		this.showOrder = showOrder;
+	}
+	
 }

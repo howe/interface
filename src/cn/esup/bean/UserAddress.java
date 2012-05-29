@@ -2,13 +2,11 @@ package cn.esup.bean;
 
 import org.nutz.dao.entity.annotation.*;
 
-import lombok.Data;
-
 /**
 * 
 */
-@Data
 @Table("es_user_address")
+@PK({"addressId"})
 public class UserAddress {
 
 	/**
@@ -107,4 +105,120 @@ public class UserAddress {
 	 */
 	@Column("game_zhiye")
 	private String gameZhiye;
+	
+	public Integer getAddressId() {
+		return addressId;
+	}
+	public void setAddressId(Integer addressId) {
+		this.addressId = addressId;
+	}
+	public String getAddressName() {
+		return addressName;
+	}
+	public void setAddressName(String addressName) {
+		this.addressName = addressName;
+	}
+	public Integer getUserId() {
+		return userId;
+	}
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+	public String getConsignee() {
+		return consignee;
+	}
+	public void setConsignee(String consignee) {
+		this.consignee = consignee;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public Integer getCountry() {
+		return country;
+	}
+	public void setCountry(Integer country) {
+		this.country = country;
+	}
+	public Integer getProvince() {
+		return province;
+	}
+	public void setProvince(Integer province) {
+		this.province = province;
+	}
+	public Integer getCity() {
+		return city;
+	}
+	public void setCity(Integer city) {
+		this.city = city;
+	}
+	public Integer getDistrict() {
+		return district;
+	}
+	public void setDistrict(Integer district) {
+		this.district = district;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getZipcode() {
+		return zipcode;
+	}
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+	public String getTel() {
+		return tel;
+	}
+	public void setTel(String tel) {
+		this.tel = tel;
+	}
+	public String getMobile() {
+		return mobile;
+	}
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+	public String getSignBuilding() {
+		return signBuilding;
+	}
+	public void setSignBuilding(String signBuilding) {
+		this.signBuilding = signBuilding;
+	}
+	public String getBestTime() {
+		return bestTime;
+	}
+	public void setBestTime(String bestTime) {
+		this.bestTime = bestTime;
+	}
+	public String getGameNickname() {
+		return gameNickname;
+	}
+	public void setGameNickname(String gameNickname) {
+		this.gameNickname = gameNickname;
+	}
+	public String getGameLevel() {
+		return gameLevel;
+	}
+	public void setGameLevel(String gameLevel) {
+		this.gameLevel = gameLevel;
+	}
+	public String getGameJueseid() {
+		return gameJueseid;
+	}
+	public void setGameJueseid(String gameJueseid) {
+		this.gameJueseid = gameJueseid;
+	}
+	public String getGameZhiye() {
+		return gameZhiye;
+	}
+	public void setGameZhiye(String gameZhiye) {
+		this.gameZhiye = gameZhiye;
+	}
+	
 }

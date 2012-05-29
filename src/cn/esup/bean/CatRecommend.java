@@ -2,17 +2,11 @@ package cn.esup.bean;
 
 import org.nutz.dao.entity.annotation.*;
 
-import lombok.Data;
-
 /**
 * 
 */
-@Data
 @Table("es_cat_recommend")
-@Pk({
-"catId" ,
-"recommendType" 
-})
+@PK({"catId", "recommendType"})
 public class CatRecommend {
 
 	/**
@@ -25,4 +19,18 @@ public class CatRecommend {
 	 */
 	@Column("recommend_type")
 	private Boolean recommendType;
+	
+	public Integer getCatId() {
+		return catId;
+	}
+	public void setCatId(Integer catId) {
+		this.catId = catId;
+	}
+	public Boolean getRecommendType() {
+		return recommendType;
+	}
+	public void setRecommendType(Boolean recommendType) {
+		this.recommendType = recommendType;
+	}
+	
 }

@@ -2,13 +2,11 @@ package cn.esup.bean;
 
 import org.nutz.dao.entity.annotation.*;
 
-import lombok.Data;
-
 /**
 * 
 */
-@Data
 @Table("es_cart")
+@PK({"recId"})
 public class Cart {
 
 	/**
@@ -107,4 +105,120 @@ public class Cart {
 	 */
 	@Column("goods_attr_id")
 	private String goodsAttrId;
+	
+	public Integer getRecId() {
+		return recId;
+	}
+	public void setRecId(Integer recId) {
+		this.recId = recId;
+	}
+	public Integer getUserId() {
+		return userId;
+	}
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+	public String getSessionId() {
+		return sessionId;
+	}
+	public void setSessionId(String sessionId) {
+		this.sessionId = sessionId;
+	}
+	public Integer getGoodsId() {
+		return goodsId;
+	}
+	public void setGoodsId(Integer goodsId) {
+		this.goodsId = goodsId;
+	}
+	public String getGoodsSn() {
+		return goodsSn;
+	}
+	public void setGoodsSn(String goodsSn) {
+		this.goodsSn = goodsSn;
+	}
+	public Integer getProductId() {
+		return productId;
+	}
+	public void setProductId(Integer productId) {
+		this.productId = productId;
+	}
+	public String getGoodsName() {
+		return goodsName;
+	}
+	public void setGoodsName(String goodsName) {
+		this.goodsName = goodsName;
+	}
+	public Long getMarketPrice() {
+		return marketPrice;
+	}
+	public void setMarketPrice(Long marketPrice) {
+		this.marketPrice = marketPrice;
+	}
+	public Long getGoodsPrice() {
+		return goodsPrice;
+	}
+	public void setGoodsPrice(Long goodsPrice) {
+		this.goodsPrice = goodsPrice;
+	}
+	public Integer getGoodsNumber() {
+		return goodsNumber;
+	}
+	public void setGoodsNumber(Integer goodsNumber) {
+		this.goodsNumber = goodsNumber;
+	}
+	public String getGoodsAttr() {
+		return goodsAttr;
+	}
+	public void setGoodsAttr(String goodsAttr) {
+		this.goodsAttr = goodsAttr;
+	}
+	public Boolean getIsReal() {
+		return isReal;
+	}
+	public void setIsReal(Boolean isReal) {
+		this.isReal = isReal;
+	}
+	public String getExtensionCode() {
+		return extensionCode;
+	}
+	public void setExtensionCode(String extensionCode) {
+		this.extensionCode = extensionCode;
+	}
+	public Integer getParentId() {
+		return parentId;
+	}
+	public void setParentId(Integer parentId) {
+		this.parentId = parentId;
+	}
+	public Boolean getRecType() {
+		return recType;
+	}
+	public void setRecType(Boolean recType) {
+		this.recType = recType;
+	}
+	public Integer getIsGift() {
+		return isGift;
+	}
+	public void setIsGift(Integer isGift) {
+		this.isGift = isGift;
+	}
+	public Boolean getIsShipping() {
+		return isShipping;
+	}
+	public void setIsShipping(Boolean isShipping) {
+		this.isShipping = isShipping;
+	}
+	public Integer getCanHandsel() {
+		return canHandsel;
+	}
+	public void setCanHandsel(Integer canHandsel) {
+		this.canHandsel = canHandsel;
+	}
+	public String getGoodsAttrId() {
+		return goodsAttrId;
+	}
+	public void setGoodsAttrId(String goodsAttrId) {
+		this.goodsAttrId = goodsAttrId;
+	}
+	
 }

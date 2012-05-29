@@ -2,13 +2,11 @@ package cn.esup.bean;
 
 import org.nutz.dao.entity.annotation.*;
 
-import lombok.Data;
-
 /**
 * 
 */
-@Data
 @Table("es_brand")
+@PK({"brandId"})
 public class Brand {
 
 	/**
@@ -46,4 +44,48 @@ public class Brand {
 	 */
 	@Column("is_show")
 	private Boolean isShow;
+	
+	public Integer getBrandId() {
+		return brandId;
+	}
+	public void setBrandId(Integer brandId) {
+		this.brandId = brandId;
+	}
+	public String getBrandName() {
+		return brandName;
+	}
+	public void setBrandName(String brandName) {
+		this.brandName = brandName;
+	}
+	public String getBrandLogo() {
+		return brandLogo;
+	}
+	public void setBrandLogo(String brandLogo) {
+		this.brandLogo = brandLogo;
+	}
+	public String getBrandDesc() {
+		return brandDesc;
+	}
+	public void setBrandDesc(String brandDesc) {
+		this.brandDesc = brandDesc;
+	}
+	public String getSiteUrl() {
+		return siteUrl;
+	}
+	public void setSiteUrl(String siteUrl) {
+		this.siteUrl = siteUrl;
+	}
+	public Integer getSortOrder() {
+		return sortOrder;
+	}
+	public void setSortOrder(Integer sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+	public Boolean getIsShow() {
+		return isShow;
+	}
+	public void setIsShow(Boolean isShow) {
+		this.isShow = isShow;
+	}
+	
 }

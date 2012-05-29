@@ -2,13 +2,11 @@ package cn.esup.bean;
 
 import org.nutz.dao.entity.annotation.*;
 
-import lombok.Data;
-
 /**
 * 
 */
-@Data
 @Table("es_goods")
+@PK({"goodsId"})
 public class Goods {
 
 	/**
@@ -267,4 +265,312 @@ public class Goods {
 	 */
 	@Column("ghsp_id")
 	private String ghspId;
+	
+	public Integer getGoodsId() {
+		return goodsId;
+	}
+	public void setGoodsId(Integer goodsId) {
+		this.goodsId = goodsId;
+	}
+	public Integer getCatId() {
+		return catId;
+	}
+	public void setCatId(Integer catId) {
+		this.catId = catId;
+	}
+	public String getGoodsSn() {
+		return goodsSn;
+	}
+	public void setGoodsSn(String goodsSn) {
+		this.goodsSn = goodsSn;
+	}
+	public String getGoodsName() {
+		return goodsName;
+	}
+	public void setGoodsName(String goodsName) {
+		this.goodsName = goodsName;
+	}
+	public String getGoodsNameStyle() {
+		return goodsNameStyle;
+	}
+	public void setGoodsNameStyle(String goodsNameStyle) {
+		this.goodsNameStyle = goodsNameStyle;
+	}
+	public Integer getClickCount() {
+		return clickCount;
+	}
+	public void setClickCount(Integer clickCount) {
+		this.clickCount = clickCount;
+	}
+	public Integer getBrandId() {
+		return brandId;
+	}
+	public void setBrandId(Integer brandId) {
+		this.brandId = brandId;
+	}
+	public String getProviderName() {
+		return providerName;
+	}
+	public void setProviderName(String providerName) {
+		this.providerName = providerName;
+	}
+	public Integer getGoodsNumber() {
+		return goodsNumber;
+	}
+	public void setGoodsNumber(Integer goodsNumber) {
+		this.goodsNumber = goodsNumber;
+	}
+	public Long getGoodsWeight() {
+		return goodsWeight;
+	}
+	public void setGoodsWeight(Long goodsWeight) {
+		this.goodsWeight = goodsWeight;
+	}
+	public Long getMarketPrice() {
+		return marketPrice;
+	}
+	public void setMarketPrice(Long marketPrice) {
+		this.marketPrice = marketPrice;
+	}
+	public Long getShopPrice() {
+		return shopPrice;
+	}
+	public void setShopPrice(Long shopPrice) {
+		this.shopPrice = shopPrice;
+	}
+	public Long getPromotePrice() {
+		return promotePrice;
+	}
+	public void setPromotePrice(Long promotePrice) {
+		this.promotePrice = promotePrice;
+	}
+	public Integer getPromoteStartDate() {
+		return promoteStartDate;
+	}
+	public void setPromoteStartDate(Integer promoteStartDate) {
+		this.promoteStartDate = promoteStartDate;
+	}
+	public Integer getPromoteEndDate() {
+		return promoteEndDate;
+	}
+	public void setPromoteEndDate(Integer promoteEndDate) {
+		this.promoteEndDate = promoteEndDate;
+	}
+	public Integer getWarnNumber() {
+		return warnNumber;
+	}
+	public void setWarnNumber(Integer warnNumber) {
+		this.warnNumber = warnNumber;
+	}
+	public String getKeywords() {
+		return keywords;
+	}
+	public void setKeywords(String keywords) {
+		this.keywords = keywords;
+	}
+	public String getGoodsBrief() {
+		return goodsBrief;
+	}
+	public void setGoodsBrief(String goodsBrief) {
+		this.goodsBrief = goodsBrief;
+	}
+	public String getGoodsDesc() {
+		return goodsDesc;
+	}
+	public void setGoodsDesc(String goodsDesc) {
+		this.goodsDesc = goodsDesc;
+	}
+	public String getGoodsThumb() {
+		return goodsThumb;
+	}
+	public void setGoodsThumb(String goodsThumb) {
+		this.goodsThumb = goodsThumb;
+	}
+	public String getGoodsImg() {
+		return goodsImg;
+	}
+	public void setGoodsImg(String goodsImg) {
+		this.goodsImg = goodsImg;
+	}
+	public String getOriginalImg() {
+		return originalImg;
+	}
+	public void setOriginalImg(String originalImg) {
+		this.originalImg = originalImg;
+	}
+	public Integer getIsReal() {
+		return isReal;
+	}
+	public void setIsReal(Integer isReal) {
+		this.isReal = isReal;
+	}
+	public String getExtensionCode() {
+		return extensionCode;
+	}
+	public void setExtensionCode(String extensionCode) {
+		this.extensionCode = extensionCode;
+	}
+	public Boolean getIsOnSale() {
+		return isOnSale;
+	}
+	public void setIsOnSale(Boolean isOnSale) {
+		this.isOnSale = isOnSale;
+	}
+	public Boolean getIsAloneSale() {
+		return isAloneSale;
+	}
+	public void setIsAloneSale(Boolean isAloneSale) {
+		this.isAloneSale = isAloneSale;
+	}
+	public Boolean getIsShipping() {
+		return isShipping;
+	}
+	public void setIsShipping(Boolean isShipping) {
+		this.isShipping = isShipping;
+	}
+	public Integer getIntegral() {
+		return integral;
+	}
+	public void setIntegral(Integer integral) {
+		this.integral = integral;
+	}
+	public Integer getAddTime() {
+		return addTime;
+	}
+	public void setAddTime(Integer addTime) {
+		this.addTime = addTime;
+	}
+	public Integer getSortOrder() {
+		return sortOrder;
+	}
+	public void setSortOrder(Integer sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+	public Boolean getIsDelete() {
+		return isDelete;
+	}
+	public void setIsDelete(Boolean isDelete) {
+		this.isDelete = isDelete;
+	}
+	public Boolean getIsBest() {
+		return isBest;
+	}
+	public void setIsBest(Boolean isBest) {
+		this.isBest = isBest;
+	}
+	public Boolean getIsNew() {
+		return isNew;
+	}
+	public void setIsNew(Boolean isNew) {
+		this.isNew = isNew;
+	}
+	public Boolean getIsHot() {
+		return isHot;
+	}
+	public void setIsHot(Boolean isHot) {
+		this.isHot = isHot;
+	}
+	public Boolean getIsPromote() {
+		return isPromote;
+	}
+	public void setIsPromote(Boolean isPromote) {
+		this.isPromote = isPromote;
+	}
+	public Integer getBonusTypeId() {
+		return bonusTypeId;
+	}
+	public void setBonusTypeId(Integer bonusTypeId) {
+		this.bonusTypeId = bonusTypeId;
+	}
+	public Integer getLastUpdate() {
+		return lastUpdate;
+	}
+	public void setLastUpdate(Integer lastUpdate) {
+		this.lastUpdate = lastUpdate;
+	}
+	public Integer getGoodsType() {
+		return goodsType;
+	}
+	public void setGoodsType(Integer goodsType) {
+		this.goodsType = goodsType;
+	}
+	public String getSellerNote() {
+		return sellerNote;
+	}
+	public void setSellerNote(String sellerNote) {
+		this.sellerNote = sellerNote;
+	}
+	public Integer getGiveIntegral() {
+		return giveIntegral;
+	}
+	public void setGiveIntegral(Integer giveIntegral) {
+		this.giveIntegral = giveIntegral;
+	}
+	public Integer getRankIntegral() {
+		return rankIntegral;
+	}
+	public void setRankIntegral(Integer rankIntegral) {
+		this.rankIntegral = rankIntegral;
+	}
+	public Integer getSuppliersId() {
+		return suppliersId;
+	}
+	public void setSuppliersId(Integer suppliersId) {
+		this.suppliersId = suppliersId;
+	}
+	public Boolean getIsCheck() {
+		return isCheck;
+	}
+	public void setIsCheck(Boolean isCheck) {
+		this.isCheck = isCheck;
+	}
+	public String getDanwei() {
+		return danwei;
+	}
+	public void setDanwei(String danwei) {
+		this.danwei = danwei;
+	}
+	public Long getDanjia() {
+		return danjia;
+	}
+	public void setDanjia(Long danjia) {
+		this.danjia = danjia;
+	}
+	public Long getYxsl() {
+		return yxsl;
+	}
+	public void setYxsl(Long yxsl) {
+		this.yxsl = yxsl;
+	}
+	public String getZhenying() {
+		return zhenying;
+	}
+	public void setZhenying(String zhenying) {
+		this.zhenying = zhenying;
+	}
+	public String getYxm() {
+		return yxm;
+	}
+	public void setYxm(String yxm) {
+		this.yxm = yxm;
+	}
+	public String getYxqm() {
+		return yxqm;
+	}
+	public void setYxqm(String yxqm) {
+		this.yxqm = yxqm;
+	}
+	public String getYxfm() {
+		return yxfm;
+	}
+	public void setYxfm(String yxfm) {
+		this.yxfm = yxfm;
+	}
+	public String getGhspId() {
+		return ghspId;
+	}
+	public void setGhspId(String ghspId) {
+		this.ghspId = ghspId;
+	}
+	
 }

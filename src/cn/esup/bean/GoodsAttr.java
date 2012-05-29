@@ -2,13 +2,11 @@ package cn.esup.bean;
 
 import org.nutz.dao.entity.annotation.*;
 
-import lombok.Data;
-
 /**
 * 
 */
-@Data
 @Table("es_goods_attr")
+@PK({"goodsAttrId"})
 public class GoodsAttr {
 
 	/**
@@ -37,4 +35,36 @@ public class GoodsAttr {
 	 */
 	@Column("attr_price")
 	private String attrPrice;
+	
+	public Integer getGoodsAttrId() {
+		return goodsAttrId;
+	}
+	public void setGoodsAttrId(Integer goodsAttrId) {
+		this.goodsAttrId = goodsAttrId;
+	}
+	public Integer getGoodsId() {
+		return goodsId;
+	}
+	public void setGoodsId(Integer goodsId) {
+		this.goodsId = goodsId;
+	}
+	public Integer getAttrId() {
+		return attrId;
+	}
+	public void setAttrId(Integer attrId) {
+		this.attrId = attrId;
+	}
+	public String getAttrValue() {
+		return attrValue;
+	}
+	public void setAttrValue(String attrValue) {
+		this.attrValue = attrValue;
+	}
+	public String getAttrPrice() {
+		return attrPrice;
+	}
+	public void setAttrPrice(String attrPrice) {
+		this.attrPrice = attrPrice;
+	}
+	
 }

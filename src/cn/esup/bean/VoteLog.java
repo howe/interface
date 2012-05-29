@@ -2,13 +2,11 @@ package cn.esup.bean;
 
 import org.nutz.dao.entity.annotation.*;
 
-import lombok.Data;
-
 /**
 * 
 */
-@Data
 @Table("es_vote_log")
+@PK({"logId"})
 public class VoteLog {
 
 	/**
@@ -32,4 +30,30 @@ public class VoteLog {
 	 */
 	@Column("vote_time")
 	private Integer voteTime;
+	
+	public Integer getLogId() {
+		return logId;
+	}
+	public void setLogId(Integer logId) {
+		this.logId = logId;
+	}
+	public Integer getVoteId() {
+		return voteId;
+	}
+	public void setVoteId(Integer voteId) {
+		this.voteId = voteId;
+	}
+	public String getIpAddress() {
+		return ipAddress;
+	}
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
+	}
+	public Integer getVoteTime() {
+		return voteTime;
+	}
+	public void setVoteTime(Integer voteTime) {
+		this.voteTime = voteTime;
+	}
+	
 }

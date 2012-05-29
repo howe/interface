@@ -2,19 +2,11 @@ package cn.esup.bean;
 
 import org.nutz.dao.entity.annotation.*;
 
-import lombok.Data;
-
 /**
 * 
 */
-@Data
 @Table("es_volume_price")
-@Pk({
-"priceType" ,
-"goodsId" ,
-"volumeNumber" ,
-"volumePrice" 
-})
+@PK({"priceType", "goodsId", "volumeNumber"})
 public class VolumePrice {
 
 	/**
@@ -37,4 +29,30 @@ public class VolumePrice {
 	 */
 	@Column("volume_price")
 	private Long volumePrice;
+	
+	public Boolean getPriceType() {
+		return priceType;
+	}
+	public void setPriceType(Boolean priceType) {
+		this.priceType = priceType;
+	}
+	public Integer getGoodsId() {
+		return goodsId;
+	}
+	public void setGoodsId(Integer goodsId) {
+		this.goodsId = goodsId;
+	}
+	public Integer getVolumeNumber() {
+		return volumeNumber;
+	}
+	public void setVolumeNumber(Integer volumeNumber) {
+		this.volumeNumber = volumeNumber;
+	}
+	public Long getVolumePrice() {
+		return volumePrice;
+	}
+	public void setVolumePrice(Long volumePrice) {
+		this.volumePrice = volumePrice;
+	}
+	
 }

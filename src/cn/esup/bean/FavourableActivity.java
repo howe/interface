@@ -2,13 +2,11 @@ package cn.esup.bean;
 
 import org.nutz.dao.entity.annotation.*;
 
-import lombok.Data;
-
 /**
 * 
 */
-@Data
 @Table("es_favourable_activity")
+@PK({"actId"})
 public class FavourableActivity {
 
 	/**
@@ -76,4 +74,84 @@ public class FavourableActivity {
 	 */
 	@Column("sort_order")
 	private Integer sortOrder;
+	
+	public Integer getActId() {
+		return actId;
+	}
+	public void setActId(Integer actId) {
+		this.actId = actId;
+	}
+	public String getActName() {
+		return actName;
+	}
+	public void setActName(String actName) {
+		this.actName = actName;
+	}
+	public Integer getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(Integer startTime) {
+		this.startTime = startTime;
+	}
+	public Integer getEndTime() {
+		return endTime;
+	}
+	public void setEndTime(Integer endTime) {
+		this.endTime = endTime;
+	}
+	public String getUserRank() {
+		return userRank;
+	}
+	public void setUserRank(String userRank) {
+		this.userRank = userRank;
+	}
+	public Integer getActRange() {
+		return actRange;
+	}
+	public void setActRange(Integer actRange) {
+		this.actRange = actRange;
+	}
+	public String getActRangeExt() {
+		return actRangeExt;
+	}
+	public void setActRangeExt(String actRangeExt) {
+		this.actRangeExt = actRangeExt;
+	}
+	public Long getMinAmount() {
+		return minAmount;
+	}
+	public void setMinAmount(Long minAmount) {
+		this.minAmount = minAmount;
+	}
+	public Long getMaxAmount() {
+		return maxAmount;
+	}
+	public void setMaxAmount(Long maxAmount) {
+		this.maxAmount = maxAmount;
+	}
+	public Integer getActType() {
+		return actType;
+	}
+	public void setActType(Integer actType) {
+		this.actType = actType;
+	}
+	public Long getActTypeExt() {
+		return actTypeExt;
+	}
+	public void setActTypeExt(Long actTypeExt) {
+		this.actTypeExt = actTypeExt;
+	}
+	public String getGift() {
+		return gift;
+	}
+	public void setGift(String gift) {
+		this.gift = gift;
+	}
+	public Integer getSortOrder() {
+		return sortOrder;
+	}
+	public void setSortOrder(Integer sortOrder) {
+		this.sortOrder = sortOrder;
+	}
+	
 }

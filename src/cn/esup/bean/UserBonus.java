@@ -2,13 +2,11 @@ package cn.esup.bean;
 
 import org.nutz.dao.entity.annotation.*;
 
-import lombok.Data;
-
 /**
 * 
 */
-@Data
 @Table("es_user_bonus")
+@PK({"bonusId"})
 public class UserBonus {
 
 	/**
@@ -47,4 +45,48 @@ public class UserBonus {
 	 */
 	@Column("emailed")
 	private Integer emailed;
+	
+	public Integer getBonusId() {
+		return bonusId;
+	}
+	public void setBonusId(Integer bonusId) {
+		this.bonusId = bonusId;
+	}
+	public Integer getBonusTypeId() {
+		return bonusTypeId;
+	}
+	public void setBonusTypeId(Integer bonusTypeId) {
+		this.bonusTypeId = bonusTypeId;
+	}
+	public Long getBonusSn() {
+		return bonusSn;
+	}
+	public void setBonusSn(Long bonusSn) {
+		this.bonusSn = bonusSn;
+	}
+	public Integer getUserId() {
+		return userId;
+	}
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+	public Integer getUsedTime() {
+		return usedTime;
+	}
+	public void setUsedTime(Integer usedTime) {
+		this.usedTime = usedTime;
+	}
+	public Integer getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(Integer orderId) {
+		this.orderId = orderId;
+	}
+	public Integer getEmailed() {
+		return emailed;
+	}
+	public void setEmailed(Integer emailed) {
+		this.emailed = emailed;
+	}
+	
 }
