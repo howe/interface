@@ -18,6 +18,12 @@ public class TestHelp {
 		// G725 暗黑破坏神3
 		// G725P004 亚服专家模式
 
+		// 暗黑三 地下城与勇士
+
+		// esup
+		// jay123
+		// 桂文清
+
 		// sign
 
 		// 签名
@@ -31,7 +37,7 @@ public class TestHelp {
 
 			url.append("?gameId=").append("G725");
 			url.append("&");
-			url.append("groupId=").append("G725P004");
+			url.append("groupId=").append("G725P003");
 			url.append("&");
 			url.append("userId=").append("111180770");
 			url.append("&");
