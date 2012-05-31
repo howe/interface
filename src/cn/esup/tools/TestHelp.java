@@ -39,7 +39,7 @@ public class TestHelp {
 			url.append("&");
 			url.append("pageNo=1");
 			url.append("&");
-			url.append("channelId=1");
+			url.append("channelId=18");
 
 			System.out.println(url);
 
