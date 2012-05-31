@@ -35,7 +35,7 @@ public class TestHelp {
 			url.append("&");
 			url.append("userId=").append("111180770");
 			url.append("&");
-			url.append("sign=").append(MD5(sign.toString()));
+			url.append("sign=").append(md5(sign.toString()));
 			url.append("&");
 			url.append("pageNo=1");
 			url.append("&");
@@ -69,7 +69,7 @@ public class TestHelp {
 		}
 	}
 
-	public final static String MD5(String s) {
+	public final static String md5(String s) {
 		char hexDigits[] = {'0',
 							'1',
 							'2',
