@@ -13,11 +13,11 @@ import org.nutz.service.EntityService;
 import org.nutz.log.Log;
 import org.nutz.log.Logs;
 
-import com.esup.bean.VolumePrice;
+import com.esup.bean.JiakuanLog;
 
-@At("/VolumePrice")
+@At("/JiakuanLog")
 @IocBean(fields={"dao"})
-public class VolumePriceModule extends EntityService<VolumePrice>{
+public class JiakuanLogModule extends EntityService<JiakuanLog>{
 
     private static final Log log = Logs.get();
 	
@@ -26,10 +26,10 @@ public class VolumePriceModule extends EntityService<VolumePrice>{
 		if (rows < 1)
 			rows = 10;
 		Pager pager = dao().createPager(page, rows);
-		List<VolumePrice> list = dao().query(VolumePrice.class, null, pager);
+		List<JiakuanLog> list = dao().query(JiakuanLog.class, null, pager);
 		Map<String, Object> map = new HashMap<String, Object>();
 		if (pager != null) {
-			pager.setRecordCount(dao().count(VolumePrice.class));
+			pager.setRecordCount(dao().count(JiakuanLog.class));
 			map.put("pager", pager);
 		}
 		map.put("list", list);
@@ -37,7 +37,7 @@ public class VolumePriceModule extends EntityService<VolumePrice>{
 	}
 	
 	@At
-	public boolean add(@Param("..") VolumePrice obj){
+	public boolean add(@Param("..") JiakuanLog obj){
 		try{
 			dao().insert(obj);
 			return true;
@@ -49,7 +49,7 @@ public class VolumePriceModule extends EntityService<VolumePrice>{
 	}
 	
 	@At
-	public boolean delete(@Param("..") VolumePrice obj){
+	public boolean delete(@Param("..") JiakuanLog obj){
 		try{
 			dao().delete(obj);
 			return true;
@@ -61,7 +61,7 @@ public class VolumePriceModule extends EntityService<VolumePrice>{
 	}
 	
 	@At
-	public boolean update(@Param("..") VolumePrice obj){
+	public boolean update(@Param("..") JiakuanLog obj){
 		try{
 			dao().update(obj);
 			return true;
