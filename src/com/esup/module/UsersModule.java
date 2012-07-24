@@ -157,7 +157,7 @@ public class UsersModule extends EntityService<Users> {
 		// '2012072376671007', '2012-07-23 11:07:46','2012-07-23 11:07:46',
 		// '2012-07-23 11:33:35', '4.0', '72'));
 
-		final Sql sql = Sqls.create("insert into es_jiakuan_log(payment_from,buyer_nick,user_name,trade_number,payment_number,order_date,payment_date,confirm_date,amount,account_id) values ('taobao', @buyer_nick, @account, @tid, @alipay_no, @created, @pay_time, @end_time, @received_payment, (select user_id from es_users where user_name = @name)) ");
+		final Sql sql = Sqls.create("insert into es_jiakuan_log(payment_from,buyer_nick,user_name,order_number,trade_number,order_date,payment_date,confirm_date,amount,account_id) values ('taobao', @buyer_nick, @account, @tid, @alipay_no, @created, @pay_time, @end_time, @received_payment, (select user_id from es_users where user_name = @name)) ");
 		sql.params().set("buyer_nick", buyer_nick);
 		sql.params().set("account", account);
 		sql.params().set("tid", tid);
