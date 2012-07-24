@@ -196,11 +196,11 @@ public class UsersModule extends EntityService<Users> {
 
 	/** 通过支付宝交易流水号判断账户是否重复加款 */
 	@At
-	public boolean isRepeatAddMoney(String alipay_no) throws Exception {
+	public boolean isRepeatAddMoney(String trade_no) throws Exception {
 		// SELECT * from es_user_account t WHERE t.user_note='2012072303977307';
 
-		Sql sql = Sqls.create("select count(t.user_id) num from es_user_account t WHERE t.user_note = @alipay_no");
-		sql.params().set("alipay_no", alipay_no);
+		Sql sql = Sqls.create("select count(t.user_id) num from es_user_account t WHERE t.user_note = @trade_no");
+		sql.params().set("trade_no", trade_no);
 
 		sql.setCallback(new SqlCallback() {
 			public Object invoke(Connection conn, ResultSet rs, Sql sql) throws SQLException {
