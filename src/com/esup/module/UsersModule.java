@@ -108,7 +108,7 @@ public class UsersModule extends EntityService<Users> {
 
 	/** 通过账户给用户加款 */
 	@At
-	public boolean addMoneyByAccount(String account, String received_payment, String tid) {
+	public boolean addMoneyByAccount(String account, String received_payment, String trade_no) {
 
 		// update es_users t set t.user_money= t.user_money + 1 where
 		// t.user_name = 'howechiang'
@@ -123,7 +123,7 @@ public class UsersModule extends EntityService<Users> {
 		// user_name='howechiang'),2,0,0,0,unix_timestamp(sysdate()),'支付宝',99)
 
 		StringBuilder memo = new StringBuilder("淘宝加款卡充值，淘宝订单号为：");
-		memo.append(tid);
+		memo.append(trade_no);
 
 		final Sql sql2 = Sqls.create("insert into es_account_log(user_id,user_money,frozen_money,rank_points,pay_points,change_time,change_desc,change_type) values((select user_id from es_users where user_name=@name),@money,0,0,0,unix_timestamp(sysdate()),@memo,0) ");
 		sql2.params().set("name", account);
@@ -142,9 +142,9 @@ public class UsersModule extends EntityService<Users> {
 
 	/** 加款日志 */
 	@At
-	public boolean addMoneyLog(	String account,
-								Long tid,
-								String alipay_no,
+	public boolean addMoneyLog(String account,
+								Long order_no,
+								String trade_no,
 								String buyer_nick,
 								Date created,
 								Date pay_time,
@@ -157,11 +157,11 @@ public class UsersModule extends EntityService<Users> {
 		// '2012072376671007', '2012-07-23 11:07:46','2012-07-23 11:07:46',
 		// '2012-07-23 11:33:35', '4.0', '72'));
 
-		final Sql sql = Sqls.create("insert into es_jiakuan_log(payment_from,buyer_nick,user_name,order_number,trade_number,order_date,payment_date,confirm_date,amount,account_id) values ('taobao', @buyer_nick, @account, @tid, @alipay_no, @created, @pay_time, @end_time, @received_payment, (select user_id from es_users where user_name = @name)) ");
+		final Sql sql = Sqls.create("insert into es_jiakuan_log(payment_from,buyer_nick,user_name,order_number,trade_number,order_date,payment_date,confirm_date,amount,account_id) values ('taobao', @buyer_nick, @account, @order_no, @alipay_no, @created, @pay_time, @end_time, @received_payment, (select user_id from es_users where user_name = @name)) ");
 		sql.params().set("buyer_nick", buyer_nick);
 		sql.params().set("account", account);
-		sql.params().set("tid", tid);
-		sql.params().set("alipay_no", alipay_no);
+		sql.params().set("order_no", order_no);
+		sql.params().set("trade_no", trade_no);
 		sql.params().set("created", created);
 		sql.params().set("pay_time", pay_time);
 		sql.params().set("end_time", end_time);
@@ -173,13 +173,13 @@ public class UsersModule extends EntityService<Users> {
 		// values ('30', 'jiakuan', '1.00', '1342737314', '1342737314',
 		// '淘宝订单号：xxxxx', '支付宝流水号：xxxxx', '0', '淘宝加款卡', '1');
 
-		final Sql sql2 = Sqls.create("insert into es_user_account(user_id,admin_user,amount,add_time,paid_time,admin_note,user_note,process_type,payment,is_paid) values ((select user_id from es_users where user_name = @name), 'jiakuan', @received_payment, unix_timestamp(@created), unix_timestamp(@pay_time), @tid, @alipay_no, '0', '淘宝加款卡', '1') ");
+		final Sql sql2 = Sqls.create("insert into es_user_account(user_id,admin_user,amount,add_time,paid_time,admin_note,user_note,process_type,payment,is_paid) values ((select user_id from es_users where user_name = @name), 'jiakuan', @received_payment, unix_timestamp(@created), unix_timestamp(@pay_time), @order_no, @trade_no, '0', '淘宝加款卡', '1') ");
 		sql2.params().set("name", account);
 		sql2.params().set("received_payment", received_payment);
 		sql2.params().set("created", created);
 		sql2.params().set("pay_time", pay_time);
-		sql2.params().set("tid", "淘宝流水号：" + tid);
-		sql2.params().set("alipay_no", alipay_no);
+		sql2.params().set("order_no", "淘宝流水号：" + order_no);
+		sql2.params().set("trade_no", trade_no);
 
 		System.out.println(sql.toString());
 		System.out.println(sql2.toString());
