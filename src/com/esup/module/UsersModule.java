@@ -108,7 +108,7 @@ public class UsersModule extends EntityService<Users> {
 
 	/** 通过账户给用户加款 */
 	@At
-	public boolean addMoneyByAccount(String account, String received_payment, String trade_no) {
+	public boolean addMoneyByAccount(String account, String received_payment, String order_no) {
 
 		// update es_users t set t.user_money= t.user_money + 1 where
 		// t.user_name = 'howechiang'
@@ -123,7 +123,7 @@ public class UsersModule extends EntityService<Users> {
 		// user_name='howechiang'),2,0,0,0,unix_timestamp(sysdate()),'支付宝',99)
 
 		StringBuilder memo = new StringBuilder("淘宝加款卡充值，淘宝订单号为：");
-		memo.append(trade_no);
+		memo.append(order_no);
 
 		final Sql sql2 = Sqls.create("insert into es_account_log(user_id,user_money,frozen_money,rank_points,pay_points,change_time,change_desc,change_type) values((select user_id from es_users where user_name=@name),@money,0,0,0,unix_timestamp(sysdate()),@memo,0) ");
 		sql2.params().set("name", account);
