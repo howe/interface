@@ -83,7 +83,11 @@ public class UsersModule extends EntityService<Users> {
 		}
 	}
 
-	/** 通过账户查询用户 */
+	/**
+	 * 通过账户查询用户 
+	 * @param account 加款的网站帐号
+	 * @return
+	 */
 	@At
 	public boolean queryUserByAccount(String account) {
 		Sql sql = Sqls.create("select count(t.user_id) num from es_users t where t.user_name = @name");
@@ -106,7 +110,13 @@ public class UsersModule extends EntityService<Users> {
 		}
 	}
 
-	/** 通过账户给用户加款 */
+	/**
+	 * 通过账户给用户加款
+	 * @param account 加款的网站帐号
+	 * @param received_payment 实际收款数
+	 * @param order_no 订单编号（淘宝编号或者财付通编号）
+	 * @return
+	 */
 	@At
 	public boolean addMoneyByAccount(String account, String received_payment, String order_no) {
 
@@ -140,7 +150,18 @@ public class UsersModule extends EntityService<Users> {
 		return true;
 	}
 
-	/** 加款日志 */
+	/**
+	 * 加款日志
+	 * @param account 加款的网站帐号
+	 * @param order_no 订单编号（淘宝编号或者财付通编号）
+	 * @param trade_no 支付编号（支付宝交易号或财付通订单号）
+	 * @param buyer_nick 拍下加款卡的淘宝或拍拍帐号
+	 * @param created 下单时间
+	 * @param pay_time 付款时间
+	 * @param end_time 确认时间
+	 * @param received_payment 实际收款数
+	 * @return
+	 */
 	@At
 	public boolean addMoneyLog(String account,
 								Long order_no,
@@ -194,7 +215,12 @@ public class UsersModule extends EntityService<Users> {
 		return true;
 	}
 
-	/** 通过支付宝交易流水号判断账户是否重复加款 */
+	/**
+	 * 通过支付交易流水号判断账户是否重复加款
+	 * @param trade_no 支付编号（支付宝交易号或财付通订单号）
+	 * @return
+	 * @throws Exception
+	 */
 	@At
 	public boolean isRepeatAddMoney(String trade_no) throws Exception {
 		// SELECT * from es_user_account t WHERE t.user_note='2012072303977307';
