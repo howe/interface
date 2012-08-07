@@ -35,9 +35,9 @@ public class TestHelp {
 			StringBuilder url = new StringBuilder();
 			url.append("http://api.1771.com/goods/json.htm");
 
-			url.append("?gameId=").append("G725");
+			url.append("?gameId=").append("G10");
 			url.append("&");
-			url.append("groupId=").append("G725P003");
+			url.append("groupId=").append("G10P001");
 			url.append("&");
 			url.append("userId=").append("111180770");
 			url.append("&");
